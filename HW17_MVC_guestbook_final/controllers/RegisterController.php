@@ -31,11 +31,11 @@ class RegisterController extends BaseController {
             $error = "Failed: All fields is required.";
         }
 
-        require_once 'views/parts/header.php';
-
-        require_once 'views/register.php';
-
-        require_once 'views/parts/footer.php';
+        echo $this->render('register.twig', [
+            'error' => isset($error) ? $error : false,
+            'username' => isset($_POST['username']) ? $_POST['username'] : '',
+            'title' => 'Register'
+        ]);
 
         return true;
     }
