@@ -30,7 +30,8 @@ class IndexController extends BaseController {
 
         echo $this->render('main.twig', [
             'error' => isset($error) ? $error : false,
-            'title' => 'Main Page'
+            'title' => 'Main Page',
+            'heading' => 'Hello PHP!!!'
         ]);
 
         return true;
