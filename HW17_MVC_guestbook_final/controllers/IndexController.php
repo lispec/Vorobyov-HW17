@@ -27,11 +27,12 @@ class IndexController extends BaseController {
             $error = "Failed: All fields are required.";
         }
 
-        require_once 'views/parts/header.php';
 
-        require_once 'views/main.php';
-
-        require_once 'views/parts/footer.php';
+        echo $this->render('main.twig', [
+            'error' => isset($error) ? $error : false,
+            'title' => 'Main Page',
+            'heading' => 'Hello PHP!!!'
+        ]);
 
         return true;
     }
